@@ -4,18 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Income Tax Returns Status</title>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!------ Include the above in your HEAD tag ---------->
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<link href="{{ URL::asset('css/styles.css') }} " rel="stylesheet" id="app" />
+		<link href="{{ URL::asset('css/styles.css') }} " rel="stylesheet" id="app" />
 
     </head>
     <body>
@@ -26,8 +26,8 @@
                     @foreach ($company as $cmp)
                         <li class="nav-item">
                             <a href="#{{ 'comp_'.$cmp->cid }}" class="nav-link {{ ($cmp->cid==1) ? 'active' : '' }}" data-toggle="tab" role="tab" aria-controls="{{ 'comp_'.$cmp->cid }}">{{ $cmp->cname }} <br />
-                                <span class="small">Company Status => {{ ($cmp->completed_tot==count($company)) ? 'Completed' : 'Pending' }} <br />
-                                Employee Status => Completed <span class="badge badge-primary ml-2">{{ $cmp->completed_tot }}</span> || Pending <span class="badge badge-warning ml-2">{{ $cmp->pending_tot }}</span></span>
+                                <span class="small">Company Status => {{ ($cmp->completed_tot==count($data)) ? 'Completed' : 'Pending' }} <br />
+                                Employee Status => Completed <span class="badge badge-primary ml-2">{{ $cmp->completed_tot }}</span> || Pending <span class="badge badge-warning ml-2">{{ $cmp->pending_tot }}</span> || Not applicable <span class="badge ml-2">{{ $cmp->applicable_tot }}</span></span>
                             </a>
                         </li>
                     @endforeach
@@ -59,7 +59,11 @@
                                                 <td>{{ $d->pan_number }}</td>
                                                 <td>{{ number_format($d->annual_income,2) }}</td>
                                                 <td>{{ $d->cname }}</td>
-                                                <td class="{{ ($d->status=='completed') ? 'alert-success' : 'alert-warning' }}">{{ $d->status }}</td>
+                                                <td class="{{ ($d->status=='completed') ? ('alert alert-success') : 
+                                                    ($d->status=='pending' ? 'alert alert-warning' : 'alert' )
+                                                 }}" >
+                                                    {{ $d->status }}
+                                                </td>
                                             </tr>
                                         @endif
                                     @endforeach

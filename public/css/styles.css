@@ -53,7 +53,7 @@
     text-align: center;
     display: block;
 }
-.alert-warning, .alert-success{
+.alert{
     text-transform: capitalize;
 }
 

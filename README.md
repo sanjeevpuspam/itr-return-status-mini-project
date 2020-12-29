@@ -16,7 +16,7 @@ Install all the dependencies using composer
 
  `composer install`
 
-####  Run the database migrations (Set the database connection in .env before migrating) **
+####  Run the database migrations (Set the database connection in .env before migrating) 
 
  `php artisan migrate:fresh --seed`
  
@@ -26,4 +26,9 @@ Start the local development server
  `php artisan serve`
  
 You can now access the server at [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+
+#### You can see outPut screen as below
+
+![alt OutPut Screen](https://github.com/sanjeevpuspam/itr-return-status-mini-project/blob/main/public/screen.png)
 

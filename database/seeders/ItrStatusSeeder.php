@@ -23,7 +23,7 @@ class ItrStatusSeeder extends Seeder
             ['status' => 'completed','emp_id' => 4],
             ['status' => 'completed','emp_id' => 5],
             ['status' => 'pending','emp_id' => 6],
-            ['status' => 'completed','emp_id' => 7],
+            ['status' => 'not applicable','emp_id' => 7],
             ['status' => 'pending','emp_id' => 8],
             ['status' => 'pending','emp_id' => 9],
             ['status' => 'completed','emp_id' => 10],
