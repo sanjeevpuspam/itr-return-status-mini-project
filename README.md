@@ -30,5 +30,5 @@ You can now access the server at [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 #### You can see outPut screen as below
 
-![alt OutPut Screen](https://github.com/sanjeevpuspam/itr-return-status-mini-project/blob/main/public/screen.png)
+![alt OutPut Screen](https://github.com/sanjeevpuspam/itr-return-status-mini-project/blob/main/public/screenshot.png)
 
